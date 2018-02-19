@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 <div class="book_date">
 													 <form>
 														<select>
-															<option selected="selected" disabled="true">Pilih Keberangkatan</option>
+															<option selected="selected" disabled="true"> choose departure</option>
 									                  		<?php $from = $this->my_model->select_from() ?>
 									                  		<?php foreach ($from->result() as $fr) 
 									                  		{?>
@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 <div class="book_date">
 												 <form>
 													<select>
-														<option selected="selected" disabled="true">Pilih Keberangkatan</option>
+														<option selected="selected" disabled="true">choose departure</option>
 								                  		<?php $from = $this->my_model->select_to() ?>
 								                  		<?php foreach ($from->result() as $fr) 
 								                  		{?>
@@ -147,13 +147,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 <h5>Depature</h5>
 												 <div class="book_date">
 												 <form>
-													<input class="date" id="datepicker1" type="text" value="22/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2015';}" required=>
+													<input class="date" id="datepicker1" type="text" value="22/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2015';}" required disabled="true">
 												 </form>
+												 <input type="checkbox" id="pulange">
 												 </div>		
 											 </li>
 											 <li class="span1_of_1">
 												 <h5>Class</h5>
-												 <!----------start section_room----------->
 												 <div class="section_room">
 													  <select id="country" onchange="change_country(this.value)" class="frm-field required">
 															<option value="null">Economy</option>
@@ -163,6 +163,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													  </select>
 												 </div>	
 											 </li>
+											 <div class="container">
+											 	<li class="span1_of_1">
+													 <h5>No. of passengers</h5>
+													 <div class="section_room">
+														  <select id="country" onchange="change_country(this.value)" class="frm-field required" style="width:150px" placeholder="Adult">
+																<option value="null" disabled="true" selected="true">Adult</option>
+																<option value="null">1</option>         
+																<option value="AX">2</option>
+																<option value="AX">3</option>
+														  </select>
+														  <br>
+														  <br>
+														  <select id="country" onchange="change_country(this.value)" class="frm-field required" style="width:150px" placeholder="Child">
+																<option value="null" disabled="true" selected="true">Child</option>
+																<option value="null">1</option>         
+																<option value="AX">2</option>
+																<option value="AX">3</option>
+														  </select>
+													 </div>	
+												 </li>
+											 </div>
 											 <li class="span1_of_3">
 													<div class="date_btn">
 														<form>
@@ -509,6 +530,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{
 			$('#login').modal('show');
 		}
+
+
+		$('#pulange').change(function() 
+	  	{
+		    if ($(this).is(':checked')) 
+		    {
+		        $('#datepicker1').prop('disabled', false);
+		    } 
+		    else 
+		    {
+		        $('#datepicker1').prop('disabled', true);
+		    }
+		});
 </script>
 <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!---->

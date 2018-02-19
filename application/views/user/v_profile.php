@@ -1,0 +1,1 @@
+Ini Profilku, <a href="<?php echo base_url('user/user/logout'); ?>">Logout</a>

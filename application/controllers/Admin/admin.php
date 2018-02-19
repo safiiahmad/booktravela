@@ -13,6 +13,15 @@ class Admin extends CI_Controller
 	{
 		$this->load->view("admin/v_admin");
 	}
+	public function ndeleng_rute()
+	{
+		$data['trute'] = $this->my_model->tampil_data('trute')->result();
+		
+		$data['show']=$this->my_model->tampil_data('trute');
+		$data['side']='admin/tampil/side';
+		$data['content']='admin/rute';
+		$this->load->view('admin/tampil/main',$data);
+	}
 
 	public function ndeleng_user()
 	{

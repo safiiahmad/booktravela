@@ -490,6 +490,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				*/
 		$().UItoTop({ easingType: 'easeOutQuart' });
 });
+
+		
 </script>
 <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!----> 

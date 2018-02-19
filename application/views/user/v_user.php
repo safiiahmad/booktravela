@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a class="scroll" href="#brief">BRIEF</a></li>
 					 <li><a class="scroll" href="#features">FEATURES</a></li>
 					 <li><a class="scroll" href="#contact">CONTACT</a></li>
-					 <li><a href="#" onclick="bukamodal();"><?php echo $this->session->userdata('username'); ?></a></li>
+					 <li><a href="<?php echo base_url('index.php/user/user/profilku'); ?>"><?php echo $this->session->userdata('username'); ?></a></li>
 				 </ul>
 			 </div>
 			 <div class="clearfix"></div>
@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 <div class="book_date">
 													 <form>
 														<select>
-															<option selected="selected" disabled="true">Pilih Keberangkatan</option>
+															<option selected="selected" disabled="true">choose departure</option>
 									                  		<?php $from = $this->my_model->select_from() ?>
 									                  		<?php foreach ($from->result() as $fr) 
 									                  		{?>
@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 <div class="book_date">
 												 <form>
 													<select>
-														<option selected="selected" disabled="true">Pilih Keberangkatan</option>
+														<option selected="selected" disabled="true">choose departure</option>
 								                  		<?php $from = $this->my_model->select_to() ?>
 								                  		<?php foreach ($from->result() as $fr) 
 								                  		{?>
@@ -144,10 +144,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												 </div>					
 											 </li>
 											 <li  class="span1_of_1 left">
-												 <h5>Depature</h5>
+												 <h5><input type="checkbox" id="pulange">Depature</h5>
 												 <div class="book_date">
 												 <form>
-													<input class="date" id="datepicker1" type="text" value="22/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2015';}" required=>
+													<input class="date" disabled="true" id="datepicker1" type="text" value="22/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2015';}" required=>
 												 </form>
 												 </div>		
 											 </li>
@@ -509,6 +509,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{
 			$('#login').modal('show');
 		}
+
+		$('#pulange').change(function() 
+	  	{
+		    if ($(this).is(':checked')) 
+		    {
+		        $('#datepicker1').prop('disabled', false);
+		    } 
+		    else 
+		    {
+		        $('#datepicker1').prop('disabled', true);
+		    }
+		});
 </script>
 <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!---->
